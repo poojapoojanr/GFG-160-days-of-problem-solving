@@ -1,0 +1,26 @@
+class Solution {
+    // Function to rotate an array by d elements in counter-clockwise direction.
+    static void rotateArr(int arr[], int d) {
+        // add your code here
+       
+        int count=0;
+        int n=arr.length;
+        int []arr2=new int[n];
+        
+         if(d>n)  d=d%n;
+    
+        
+        
+        for(int i=d;i<n;i++){
+            arr2[count++]=arr[i];
+        }
+        while(count < n){
+            for(int i=0;i<d;i++)
+            arr2[count++]= arr[i];
+        }
+        
+        for(int i=0;i<n;i++){
+            arr[i]=arr2[i];
+        }
+    }
+}
