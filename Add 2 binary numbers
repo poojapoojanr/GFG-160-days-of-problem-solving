@@ -1,0 +1,41 @@
+#User function Template for python3
+def trimInitialZeros(s):
+    first = s.find("1")
+    return s[first:] if first != -1 else "0"
+    
+class Solution:
+	def addBinary(self, s1, s2):
+		# code here
+		s1 = trimInitialZeros(s1) // remove initial zeros
+		s2 = trimInitialZeros(s2)
+		
+		n1 = len(s1)
+		n2 = len(s2)
+	    
+	    if n1 < n2 :
+	        s1,s2 = s2,s1
+	        n1,n2 = n2,n1
+		        
+        j = n2 - 1
+        res = []
+        carry = 0
+        
+        for i in range ( n1-1 , -1 , -1 ):
+            b1 = int(s1[i])
+            Tsum = carry + b1 
+            
+            if j > -1:
+                b2 = int(s2[j])
+                Tsum = Tsum + b2 
+                j-=1
+            
+            bit  = Tsum % 2
+            carry = Tsum // 2
+            res.append(str(bit))
+        if carry > 0:
+                res.append("1")
+            
+        return "".join(res[::-1]) // Converts to string 
+            
+            
+      
