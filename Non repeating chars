@@ -1,0 +1,22 @@
+#User function Template for python3
+
+def charFrequency(s):
+    f = [0]*256
+    for c in s:
+        f[ord(c)]+=1
+        # print(ord(c))
+    return f
+class Solution:
+    
+    #Function to find the first non-repeating character in a string.
+    def nonRepeatingChar(self,s):
+        #code here
+        freq = charFrequency(s) 
+        for c in s:
+            if freq[ord(c)] == 1:
+                return c
+        return '$'
+        
+    
+    
+
