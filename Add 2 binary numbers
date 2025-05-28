@@ -1,4 +1,4 @@
-#User function Template for python3
+
 def trimInitialZeros(s):
     first = s.find("1")
     return s[first:] if first != -1 else "0"
